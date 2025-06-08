@@ -1,4 +1,4 @@
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app/app.module';
 
@@ -12,6 +12,8 @@ async function bootstrap() {
   app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3000;
 
+  app.useGlobalPipes(new ValidationPipe());
+
   app.use(
     session({
       secret: config.SESSION_SECRET,
@@ -20,14 +22,14 @@ async function bootstrap() {
       cookie: {
         maxAge: 24 * 60 * 60 * 1000 * 30,
         httpOnly: true,
-        secure: true,
+        // secure: true, -- configure mkcert
         sameSite: 'none',
       },
     })
   );
 
   app.enableCors({
-    origin: [config.FRONTEND_URL],
+    origin: [config.FRONTEND_URL, 'localhost'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type'],
     credentials: true,

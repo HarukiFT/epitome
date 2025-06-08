@@ -1,7 +1,7 @@
 {
-  "name": "models",
+  "name": "prisma",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/models/src",
+  "sourceRoot": "libs/prisma/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -9,17 +9,17 @@
       "executor": "nx:run-commands",
       "options": {
         "commands": ["npx prisma generate"],
-        "cwd": "libs/models"
+        "cwd": "libs/prisma"
       }
     },
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/libs/models",
-        "main": "libs/models/src/index.ts",
-        "tsConfig": "libs/models/tsconfig.lib.json",
-        "assets": ["libs/models/*.md"]
+        "outputPath": "dist/libs/prisma",
+        "main": "libs/prisma/src/index.ts",
+        "tsConfig": "libs/prisma/tsconfig.lib.json",
+        "assets": ["libs/prisma/*.md"]
       },
       "dependsOn": ["prisma:generate"]
     }
