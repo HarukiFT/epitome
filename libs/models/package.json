@@ -1,13 +1,15 @@
 {
-  "name": "contracts",
+  "name": "models",
   "version": "0.0.1",
   "private": true,
   "type": "commonjs",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "dependencies": {
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.2",
+    "@prisma/client": "^6.9.0",
     "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.9.0"
   }
 }

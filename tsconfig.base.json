@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@myorg/contracts": ["libs/contracts/src/index.ts"],
-      "@myorg/ui": ["libs/ui/src/index.ts"]
+      "@myorg/ui": ["libs/ui/src/index.ts"],
+      "@myorg/models": ["libs/models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,3 +1,1 @@
-export function contracts(): string {
-  return 'contracts';
-}
+export * from './auth';
