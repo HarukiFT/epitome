@@ -29,7 +29,7 @@ async function bootstrap() {
   );
 
   app.enableCors({
-    origin: [config.FRONTEND_URL, 'localhost'],
+    origin: [config.FRONTEND_URL],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type'],
     credentials: true,

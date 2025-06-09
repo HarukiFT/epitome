@@ -5,7 +5,14 @@
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@myorg/contracts": ["../../libs/contracts/src/index.ts"],
+      "@myorg/ui": ["../../libs/ui/src/index.ts"],
+      "@myorg/models": ["../../libs/models/src/index.ts"]
+    }
   },
   "files": [],
   "include": [],
